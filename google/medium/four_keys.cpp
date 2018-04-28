@@ -25,7 +25,7 @@ int four_keys(int n) {
   v[0] = 0;
   for (int i=1; i<=n; i++) {
     v[i] = 1+v[i-1];
-    for (int j=0; j<=i-3; j++) {
+    for (int j=1; j<=i-3; j++) {
       v[i] = max(v[i],(i-j-1)*v[j]);
     }
   }
@@ -33,8 +33,8 @@ int four_keys(int n) {
 }
 
 int main() {
-  cout << four_keys(3) << endl;
-  cout << four_keys(7) << endl;
-  cout << four_keys(11) << endl;
+  int n;
+  cin >> n;
+  cout << four_keys(n) << endl;
   return 0;
 }
